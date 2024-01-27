@@ -1,5 +1,6 @@
 import React, { useEffect,useState } from 'react';
 import fetchMovies from '../src/utils/api';
+import Search from './components/pages/home/search';
 
 const App = () => {
   const [genres, setGenres] = useState([]);
@@ -20,16 +21,7 @@ const App = () => {
 
   return (
     <div>
-    <h2>Movie Genres</h2>
-    {genres.length === 0 ? (
-      <p>Loading...</p>
-    ) : (
-      <ul>
-        {genres.map((genre) => (
-          <li key={genre.id}>{genre.name}</li>
-        ))}
-      </ul>
-    )}
+    <Search />
   </div>
   );
 };
